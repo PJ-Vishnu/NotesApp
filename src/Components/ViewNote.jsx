@@ -30,7 +30,7 @@ function ViewNote(){
     const handleSubmit = async (e) => {
         try {
             let data = formData
-            const response = await axios.put('http://localhost:4000/notes/newnote', data)
+            const response = await axios.put(`http://localhost:4000/notes/newnote${id}`, data)
             alert(JSON.stringify(response.data  ))
 
         } catch (error) {

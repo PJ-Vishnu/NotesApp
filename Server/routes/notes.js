@@ -22,11 +22,11 @@ router.post('/newnote', async (req,res)=>{
         return res.status(404).json({result:error}).end();
     }
 });
-router.put('/newnote', async (req,res)=>{
+router.put('/newnote:id', async (req,res)=>{
+    const {id}=req.params
     try {
         const data=req.body
-        const notes= await Notes.findByIdAndUpdate({})
-        const newnote=notes.save();
+        const notes= await Notes.findByIdAndUpdate(id, data, {new:true})
         return res.status(200).json('Saved').end();
     } catch (error) {
         return res.status(404).json({result:error}).end();

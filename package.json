@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "install-server": "cd Server && npm install",
-    "start-server": "cd Server && nodemon app.js",
+    "start-server": "cd Server && node app.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
